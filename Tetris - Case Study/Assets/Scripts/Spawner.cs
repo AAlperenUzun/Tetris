@@ -107,6 +107,17 @@ public class Spawner : MonoBehaviour
         {
             Instantiate(tetrisObjects[6], randomPoint, Quaternion.identity);
         }
+        else
+        {
+            Spawner.ifDraw = true;
+            warning.text = "Draw appropiate tetris block!";
+            notNull = false;
+            collideCount = 0;
+            for (int i = 0; i < Blocknums.Length; i++)
+            {
+                Blocknums[i] = 0;
+            }
+        }
         listString = "";
         for (int i = 0; i < Blocknums.Length; i++)
         {
